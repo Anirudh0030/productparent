@@ -1,0 +1,22 @@
+digraph "com.bharath.product:productparent:pom:1.0" { 
+	"com.bharath.product:productparent:pom:1.0" -> "junit:junit:jar:4.4:compile" ; 
+ } digraph "com.bharath.product:productservices:jar:1.0" { 
+	"com.bharath.product:productservices:jar:1.0" -> "junit:junit:jar:4.4:provided" ; 
+	"com.bharath.product:productservices:jar:1.0" -> "org.springframework:spring-context:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-context:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-aop:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-context:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-beans:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-context:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-core:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-context:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-expression:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-core:jar:4.3.3.RELEASE:compile" -> "commons-logging:commons-logging:jar:1.2:compile" ; 
+ } digraph "com.bharath.product:productweb:war:1.0" { 
+	"com.bharath.product:productweb:war:1.0" -> "junit:junit:jar:3.8.1:test" ; 
+	"com.bharath.product:productweb:war:1.0" -> "org.apache.geronimo.specs:geronimo-servlet_3.0_spec:jar:1.0:compile" ; 
+	"com.bharath.product:productweb:war:1.0" -> "com.bharath.product:productservices:jar:1.0:compile" ; 
+	"com.bharath.product:productweb:war:1.0" -> "org.springframework:spring-web:jar:4.3.3.RELEASE:compile" ; 
+	"com.bharath.product:productservices:jar:1.0:compile" -> "org.springframework:spring-context:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-context:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-expression:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-web:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-aop:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-web:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-beans:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-web:jar:4.3.3.RELEASE:compile" -> "org.springframework:spring-core:jar:4.3.3.RELEASE:compile" ; 
+	"org.springframework:spring-core:jar:4.3.3.RELEASE:compile" -> "commons-logging:commons-logging:jar:1.2:compile" ; 
+ } 
